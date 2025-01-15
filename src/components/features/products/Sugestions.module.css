@@ -1,0 +1,49 @@
+.suggestionsContainer {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.carouselContainer {
+    position: relative;
+    padding: 0.5rem;
+}
+
+.carousel {
+    width: 100%;
+}
+
+/* Estilo para os slides */
+.carouselItem {
+    width: 250px !important; /* Sobrescreve o width padrão do Swiper */
+    height: auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .carouselItem {
+        width: 200px !important;
+    }
+
+    .suggestionsContainer {
+        padding: 0.5rem;
+    }
+
+    .title {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .carouselItem {
+        width: 180px !important;
+    }
+}

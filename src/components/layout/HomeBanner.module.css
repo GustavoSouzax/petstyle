@@ -1,0 +1,35 @@
+.banner {
+    background: linear-gradient(45deg, var(--primary-color) 30%, var(--secondary-color));
+    color: white;
+    padding: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bannerContent {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.bannerContent h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.bannerContent p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .bannerContent h2 {
+        font-size: 2rem;
+    }
+
+    .bannerContent p {
+        font-size: 1rem;
+    }
+}

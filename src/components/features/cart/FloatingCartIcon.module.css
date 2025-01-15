@@ -1,0 +1,81 @@
+.floatingCart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    z-index: 1000;
+    transition: transform 0.2s ease;
+}
+
+.floatingCart:hover {
+    transform: scale(1.05);
+}
+
+.cartContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartIcon {
+    font-size: 24px;
+}
+
+.badge {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.droplet {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: var(--secondary-color);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    top: -20px;
+    right: -14px;
+    pointer-events: none;
+}
+
+/* Efeito de brilho suave */
+.floatingCart::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0.2));
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.floatingCart:hover::after {
+    opacity: 1;
+}

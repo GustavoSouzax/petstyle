@@ -1,0 +1,58 @@
+.productDetails {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.productImage {
+    flex: 1;
+}
+
+.productImage img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.productInfo {
+    flex: 2;
+}
+
+.productRating {
+    color: #ffc107;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.productPrice {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.currencySymbol {
+    font-size: 1rem;
+    vertical-align: super;
+    margin-right: 0.25rem;
+}
+
+.shipping {
+    color: #4caf50;
+    margin-bottom: 1rem;
+}
+
+.productDescription {
+    margin-top: 2rem;
+}
+
+.productDescription h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .productDetails {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,79 @@
+.categoriesWrapper {
+    position: relative;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.categoriesContainer {
+    display: flex;
+    padding: 10px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.categorySlide {
+    display: flex;
+    flex-shrink: 0;
+    width: auto !important;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 80px;
+    transition: transform 0.3s ease;
+    user-select: none;
+}
+
+.category:hover {
+    transform: scale(1.05);
+}
+
+.category img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 8px;
+    border: 2px solid var(--primary-color);
+    transition: border-color 0.3s ease;
+}
+
+.category span {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.scrollButton {
+    position: absolute;
+    top: 50%;
+    /* transform: translateY(-50%); */ /* Ajustar depois  */
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    /* Garante que esteja acima do Swiper */
+    transition: background-color 0.3s ease;
+}
+
+.scrollButton:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.scrollLeft {
+    left: 0;
+}
+
+.scrollRight {
+    right: 0;
+}

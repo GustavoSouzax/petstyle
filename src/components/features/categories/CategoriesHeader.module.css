@@ -1,0 +1,19 @@
+.categoriesHeader {
+    margin-top: .5rem;
+    display: flex;
+    gap: .75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.category {
+    white-space: nowrap;
+}
+
+.category button {
+    padding: 0.2rem .5rem;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 9999px;
+}
