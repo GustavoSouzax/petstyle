@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router'
+import { ScrollToTop } from './components/hooks/ScrollToTop.js'
 import Container from './components/layout/Container'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
@@ -21,13 +22,14 @@ function App() {
     <CartProvider>
         {!isLoginPage && <Header />}
         <Container>
+          <ScrollToTop />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/offers' element={<Offers />} />
             <Route path='/login' element={<Login />} />
             <Route path='/forgot-password' element={<ForgotPassword />} />
             <Route path='/cart' element={<Cart />} />
-            <Route path='/product/:id' element={<ProductDetails />} />
+            <Route path='/product/:slug' element={<ProductDetails />} />
           </Routes>
         </Container>
         {!isLoginPage && <Footer />}
