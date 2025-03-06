@@ -1,29 +1,26 @@
 import { useState } from "react"
 import { Link } from "react-router"
 import { FaArrowLeft } from "react-icons/fa"
-import Button from "../../ui/Button"
+import { Label, Input, Button } from "../../ui"
 import styles from "./ForgotPassword.module.css"
-import Input from "../../ui/form/Input"
-import Label from "../../ui/form/label"
-
 function ForgotPassword() {
-    const [email, setEmail] = useState('')
-    const [error, setError] = useState('')
-    const [successMessage, setSuccessMessage] = useState('')
+    const [email, setEmail] = useState("")
+    const [error, setError] = useState("")
+    const [successMessage, setSuccessMessage] = useState("")
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setError('')
-        setSuccessMessage('')
+        setError("")
+        setSuccessMessage("")
 
         if (!/\S+@\S+\.\S+/.test(email)) {
-            setError('Por favor, insira um endereço de e-mail.')
+            setError("Por favor, insira um endereço de e-mail.")
             return
         }
 
         // Implement forgot password logic here
-        setSuccessMessage('Um link de redefinição foi enviado para o seu e-mail.')
-        setEmail('')
+        setSuccessMessage("Um link de redefinição foi enviado para o seu e-mail.")
+        setEmail("")
     }
     return (
         <div className={styles.forgotPasswordContainer}>
@@ -38,24 +35,22 @@ function ForgotPassword() {
                     </p>
                     <form onSubmit={handleSubmit} className={styles.form}>
                         <div className={styles.formGroup}>
-                            <Label htmlFor="email" text="E-mail" /> 
+                            <Label htmlFor="email" text="E-mail" />
                             <Input
                                 type="email"
                                 id="email"
                                 name="email"
                                 value={email}
                                 handleInputChange={(e) => setEmail(e.target.value)}
-                                customClass={error ? 'errorInput' : ''}
+                                customClass={error ? "errorInput" : ""}
                             />
                             {error && <span className={styles.errorMessage}>{error}</span>}
                         </div>
-                        <Button type="submit" variant="primary" className={styles.submitButton}>
+                        <Button type="submit" customClass="primary" className={styles.submitButton}>
                             Enviar link de redefinição
                         </Button>
                     </form>
-                    {successMessage && (
-                        <p className={styles.successMessage}>{successMessage}</p>
-                    )}
+                    {successMessage && <p className={styles.successMessage}>{successMessage}</p>}
                     <Link to="/login" className={styles.backToLogin}>
                         <FaArrowLeft /> Voltar para o login
                     </Link>
@@ -63,7 +58,6 @@ function ForgotPassword() {
             </div>
         </div>
     )
-
 }
 
 export default ForgotPassword

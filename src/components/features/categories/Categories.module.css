@@ -64,6 +64,7 @@
     z-index: 10;
     /* Garante que esteja acima do Swiper */
     transition: background-color 0.3s ease;
+    display: none;
 }
 
 .scrollButton:hover {

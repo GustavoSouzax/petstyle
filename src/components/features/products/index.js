@@ -1,0 +1,8 @@
+export { default as Product } from "./Product"
+export { default as ProductList } from "./ProductList"
+export { default as ProductModal } from "./ProductModal"
+export { default as ProductDetails } from "./ProductDetails"
+export { default as Suggestions } from "./Suggestions"
+export { default as ProductGallery } from "./ProductGallery"
+export { default as ProductPrice } from "./ProductPrice"
+export { default as ProductBenefits } from "./ProductBenefits"

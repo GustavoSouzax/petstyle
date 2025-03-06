@@ -1,0 +1,5 @@
+export { default as Home } from "./Home"
+export { default as Offers } from "./Offers"
+export { default as Cart } from "./Cart"
+export { default as Login } from "./login/Login"
+export { default as ForgotPassword } from "./login/ForgotPassword"

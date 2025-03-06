@@ -1,19 +1,19 @@
-import { products } from '../../../data/products'
-import Product from './Product'
+import PropTypes from 'prop-types'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
-import PropTypes from 'prop-types'
-import styles from "./Sugestions.module.css"
+import { products } from '../../../data/products'
+import Product from './Product'
+import styles from "./Suggestions.module.css"
 
 // Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/autoplay'
 
-function Sugestions({title}) {
+function Suggestions({ title }) {
     const suggestedProducts = products.slice(0, 9)
 
     return (
-        <div className={styles.suggestionsContainer}>
+        <section className={styles.suggestionsContainer}>
             <h2 className={styles.title}>{title}</h2>
             <div className={styles.carouselContainer}>
                 <Swiper
@@ -43,12 +43,12 @@ function Sugestions({title}) {
                     ))}
                 </Swiper>
             </div>
-        </div>
+        </section>
     )
 }
 
-Sugestions.propTypes = {
+Suggestions.propTypes = {
     title: PropTypes.string.isRequired
 }
 
-export default Sugestions
+export default Suggestions

@@ -1,34 +1,50 @@
-import { products } from '../../../data/products'
-//import { faker } from '@faker-js/faker'
-import Product from './Product'
-import styles from './ProductList.module.css'
+import { useState, useEffect } from "react"
+import { products } from "../../../data/products"
+import Product from "./Product"
+import { Button } from "../../ui"
+import styles from "./ProductList.module.css"
 
 function ProductList() {
+  const [visibleProducts, setVisibleProducts] = useState(() => {
+    const saved = sessionStorage.getItem("visibleProducts")
+    return saved ? Math.min(Number.parseInt(saved, 10), products.length) : 12
+  })
 
-    /*     const products = Array.from({ length: 100 }, () => ({
-            id: faker.number.int({ min: 1, max: 1000 }), // IDs únicos entre 1 e 1000
-            title: faker.commerce.productName(),
-            price: parseFloat(faker.commerce.price({ min: 1.2, max: 399.9 })), // Preço entre 1,20 e 499,90
-            rating: faker.number.int({ min: 1, max: 5 }), // Rating entre 1 e 5
-            shipping: faker.datatype.boolean() ? 'Frete Grátis' : 'Frete Pago', // Frete grátis ou pago
-            image: 'https://placehold.co/400x400'
-        }))
-     */
-    return (
-        <div className={styles.productList}>
-            {products.map(product => (
-                <Product
-                    key={product.id}
-                    id={product.id}
-                    title={product.title}
-                    price={product.price}
-                    rating={product.rating}
-                    shipping={product.shipping}
-                    image={product.image}
-                />
-            ))}
+  useEffect(() => {
+    sessionStorage.setItem("visibleProducts", visibleProducts.toString())
+  }, [visibleProducts])
+
+  const showMoreProducts = () => {
+    const newValue = visibleProducts + 12
+    setVisibleProducts(newValue)
+    sessionStorage.setItem("visibleProducts", newValue.toString())
+  }
+
+  return (
+    <>
+      <section className={styles.productList}>
+        {products.slice(0, visibleProducts).map((product) => (
+          <Product
+            key={product.id}
+            id={product.id}
+            title={product.title}
+            price={product.price}
+            rating={product.rating}
+            shipping={product.shipping}
+            image={product.image}
+          />
+        ))}
+      </section>
+
+      {visibleProducts < products.length && (
+        <div className={styles.showMoreContainer}>
+          <Button customClass="showMoreButton" className={styles.showMoreButton} onClick={showMoreProducts}>
+            Mostrar Mais Produtos
+          </Button>
         </div>
-    )
+      )}
+    </>
+  )
 }
 
 export default ProductList

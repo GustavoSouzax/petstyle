@@ -1,12 +1,12 @@
 .footer {
     background-color: #333;
     color: white;
-    padding: 3rem 2rem .5rem; ;
+    padding: 3rem 2rem .5rem;
     margin-top: 4rem;
 }
 
 .footer > p {
-    padding-top: 1rem;
+    padding-top: .5rem;
     text-align: center;
 }
 
@@ -23,7 +23,8 @@
     color: var(--primary-color);
 }
 
-.footerSection p, .footerSection a {
+.footerSection p,
+.footerSection a {
     color: #fff;
     margin-bottom: .5rem;
     display: block;

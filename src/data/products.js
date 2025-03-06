@@ -16,14 +16,6 @@ export const products = [
         image: "https://placehold.co/400x400"
     },
     {
-        id: 3,
-        title: "Cama Confortável",
-        price: 89.90,
-        rating: 4,
-        shipping: "Pronta entrega",
-        image: "https://placehold.co/400x400"
-    },
-    {
         id: 4,
         title: "Brinquedo Interativo",
         price: 29.90,
@@ -375,4 +367,428 @@ export const products = [
         shipping: "Envio em 24h",
         image: "https://placehold.co/400x400"
     },
+    {
+        id: 48,
+        title: "Brinquedo de Pelúcia para Cães",
+        price: 29.90,
+        rating: 4,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 49,
+        title: "Cama Ortomolecular para Pets",
+        price: 199.90,
+        rating: 5,
+        shipping: "Envio em 3 dias",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 50,
+        title: "Roupa de Banho para Cães",
+        price: 39.90,
+        rating: 4,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 51,
+        title: "Bebedouro Portátil para Pets",
+        price: 24.90,
+        rating: 5,
+        shipping: "Envio em 24h",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 52,
+        title: "Coleira Refletiva para Cães",
+        price: 19.90,
+        rating: 4,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 53,
+        title: "Kit de Limpeza para Ouvidos",
+        price: 14.90,
+        rating: 4,
+        shipping: "Envio em 3 dias",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 54,
+        title: "Brinquedo de Corda para Cães",
+        price: 19.90,
+        rating: 5,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 55,
+        title: "Cama Térmica para Gatos",
+        price: 89.90,
+        rating: 4,
+        shipping: "Envio em 24h",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 56,
+        title: "Comedouro Duplo para Pets",
+        price: 34.90,
+        rating: 4,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 57,
+        title: "Brinquedo Interativo para Gatos",
+        price: 49.90,
+        rating: 5,
+        shipping: "Envio em 3 dias",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 58,
+        title: "Roupa de Neve para Cães",
+        price: 69.90,
+        rating: 4,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 59,
+        title: "Coleira de Nylon Personalizada",
+        price: 24.90,
+        rating: 5,
+        shipping: "Envio em 24h",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 60,
+        title: "Brinquedo de Borracha para Cães",
+        price: 19.90,
+        rating: 4,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 61,
+        title: "Cama Elevada para Cães",
+        price: 129.90,
+        rating: 5,
+        shipping: "Envio em 3 dias",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 62,
+        title: "Kit de Higiene Dental para Pets",
+        price: 39.90,
+        rating: 4,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 63,
+        title: "Brinquedo de Pelúcia para Gatos",
+        price: 29.90,
+        rating: 5,
+        shipping: "Envio em 24h",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 64,
+        title: "Roupa de Festa para Gatos",
+        price: 49.90,
+        rating: 4,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 65,
+        title: "Coleira de Couro com Cristais",
+        price: 59.90,
+        rating: 5,
+        shipping: "Envio em 3 dias",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 66,
+        title: "Brinquedo de Borracha para Gatos",
+        price: 19.90,
+        rating: 4,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 67,
+        title: "Cama de Viagem para Pets",
+        price: 79.90,
+        rating: 5,
+        shipping: "Envio em 24h",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 68,
+        title: "Kit de Banho para Pets",
+        price: 49.90,
+        rating: 4,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 69,
+        title: "Brinquedo de Corda para Gatos",
+        price: 19.90,
+        rating: 5,
+        shipping: "Envio em 3 dias",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 70,
+        title: "Roupa de Proteção Solar para Cães",
+        price: 39.90,
+        rating: 4,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 71,
+        title: "Coleira de Segurança para Pets",
+        price: 29.90,
+        rating: 5,
+        shipping: "Envio em 24h",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 72,
+        title: "Brinquedo de Pelúcia para Cães Grandes",
+        price: 49.90,
+        rating: 4,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 73,
+        title: "Cama de Espuma Memory Foam",
+        price: 149.90,
+        rating: 5,
+        shipping: "Envio em 3 dias",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 74,
+        title: "Kit de Brinquedos para Cães",
+        price: 59.90,
+        rating: 4,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 75,
+        title: "Roupa de Chuva para Gatos",
+        price: 39.90,
+        rating: 5,
+        shipping: "Envio em 24h",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 76,
+        title: "Coleira de Couro com Pingente",
+        price: 34.90,
+        rating: 4,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 77,
+        title: "Brinquedo de Borracha para Cães Grandes",
+        price: 29.90,
+        rating: 5,
+        shipping: "Envio em 3 dias",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 78,
+        title: "Cama de Veludo para Pets",
+        price: 99.90,
+        rating: 4,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 79,
+        title: "Kit de Limpeza para Olhos",
+        price: 19.90,
+        rating: 4,
+        shipping: "Envio em 24h",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 80,
+        title: "Brinquedo de Pelúcia para Gatos",
+        price: 24.90,
+        rating: 5,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 81,
+        title: "Roupa de Tricô para Gatos",
+        price: 39.90,
+        rating: 4,
+        shipping: "Envio em 3 dias",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 82,
+        title: "Coleira de Nylon com Estampa",
+        price: 19.90,
+        rating: 5,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 83,
+        title: "Brinquedo de Corda para Cães Grandes",
+        price: 29.90,
+        rating: 4,
+        shipping: "Envio em 24h",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 84,
+        title: "Cama de Algodão para Pets",
+        price: 79.90,
+        rating: 5,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 85,
+        title: "Kit de Banho Seco para Pets",
+        price: 34.90,
+        rating: 4,
+        shipping: "Envio em 3 dias",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 86,
+        title: "Brinquedo de Pelúcia para Cães Pequenos",
+        price: 19.90,
+        rating: 5,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 87,
+        title: "Roupa de Inverno para Gatos",
+        price: 49.90,
+        rating: 4,
+        shipping: "Envio em 24h",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 88,
+        title: "Coleira de Couro com Fivela",
+        price: 29.90,
+        rating: 5,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 89,
+        title: "Brinquedo de Borracha para Gatos",
+        price: 19.90,
+        rating: 4,
+        shipping: "Envio em 3 dias",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 90,
+        title: "Cama de Viagem Dobrável",
+        price: 59.90,
+        rating: 5,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 91,
+        title: "Kit de Higiene para Gatos",
+        price: 39.90,
+        rating: 4,
+        shipping: "Envio em 24h",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 92,
+        title: "Brinquedo de Corda para Gatos",
+        price: 14.90,
+        rating: 5,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 93,
+        title: "Roupa de Proteção para Cães",
+        price: 34.90,
+        rating: 4,
+        shipping: "Envio em 3 dias",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 94,
+        title: "Coleira de Nylon com Luz LED",
+        price: 24.90,
+        rating: 5,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 95,
+        title: "Brinquedo de Pelúcia para Cães Médios",
+        price: 29.90,
+        rating: 4,
+        shipping: "Envio em 24h",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 96,
+        title: "Cama de Espuma para Pets",
+        price: 89.90,
+        rating: 5,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 97,
+        title: "Kit de Banho para Cães",
+        price: 49.90,
+        rating: 4,
+        shipping: "Envio em 3 dias",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 98,
+        title: "Brinquedo de Borracha para Cães Pequenos",
+        price: 19.90,
+        rating: 5,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 99,
+        title: "Roupa de Verão para Gatos",
+        price: 29.90,
+        rating: 4,
+        shipping: "Envio em 24h",
+        image: "https://placehold.co/400x400"
+    },
+    {
+        id: 100,
+        title: "Coleira de Couro com Estampa",
+        price: 34.90,
+        rating: 5,
+        shipping: "Pronta entrega",
+        image: "https://placehold.co/400x400"
+    }
 ]

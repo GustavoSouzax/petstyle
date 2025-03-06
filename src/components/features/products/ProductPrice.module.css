@@ -1,0 +1,38 @@
+.priceContainer {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.productPrice {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    display: flex;
+    align-items: flex-start;
+}
+
+.currencySymbol {
+    font-size: 1.2rem;
+    margin-right: .4rem;
+    margin-top: .5rem;
+}
+
+.installments {
+    color: #666;
+    font-size: 1rem;
+    margin-top: .5rem;
+}
+
+@media (max-width: 400px) {
+    .priceContainer {
+        padding: 1rem;
+    }
+    .productPrice {
+        font-size: 2rem;
+    }
+    .installments {
+        font-size: .9rem;
+    }
+}

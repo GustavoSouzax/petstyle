@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router'
+import { Link, useLocation, redirect } from 'react-router'
 import { FaMagnifyingGlass, FaCartShopping, FaUser } from 'react-icons/fa6'
 import styles from './Header.module.css'
 import { useCart } from '../features/cart/cartUtils'
 import Button from '../ui/Button'
-import { useScrollDirection } from '../hooks/useScrollDirection'
+import { useScrollDirection } from '../../hooks/useScrollDirection'
 import CategoriesHeader from '../features/categories/CategoriesHeader'
 
 function Header() {
     const { cart } = useCart()
     const [hasItems, setHasItems] = useState(false)
+    const [search, setSearch] = useState('')
     const scrollDirection = useScrollDirection()
     const location = useLocation()
 
@@ -19,6 +20,7 @@ function Header() {
 
     const handleSearch = (e) => {
         e.preventDefault()
+        redirect('/search')
         // Implement search functionality
     }
 
@@ -33,8 +35,9 @@ function Header() {
                         type="text"
                         placeholder='Busque roupas e acessórios para seu pet...'
                         aria-label="Buscar produtos"
+                        onChange={(e) => setSearch(e.target.value)}
                     />
-                    <Button type="submit" variant="searchBarButton" aria-label="Buscar">
+                    <Button type="submit" customClass="searchBarButton" aria-label="Buscar">
                         <FaMagnifyingGlass />
                     </Button>
                 </form>

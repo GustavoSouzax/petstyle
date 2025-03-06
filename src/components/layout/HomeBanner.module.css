@@ -24,6 +24,22 @@
     margin-bottom: 1.5rem;
 }
 
+.bannerLink {
+    display: inline-block;
+    background-color: white;
+    color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.bannerLink:hover,
+.bannerLink:focus {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
 @media (max-width: 768px) {
     .bannerContent h2 {
         font-size: 2rem;

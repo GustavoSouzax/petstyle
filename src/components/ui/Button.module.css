@@ -1,6 +1,7 @@
 .button {
     padding: 0.5rem 1rem;
     border: none;
+    color: white;
     border-radius: 4px;
     font-size: 1rem;
     cursor: pointer;
@@ -18,7 +19,6 @@
 
 .primary {
     background-color: var(--primary-color);
-    color: white;
 }
 
 .primary:hover:not(:disabled) {
@@ -26,11 +26,26 @@
 }
 
 .secondary {
-    background-color: white;
     border-radius: 9999px;
     padding: .1rem .5rem;
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
+}
+
+.showMoreButton {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px 16px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    margin: 16px auto 0;
+    transition: background-color 0.3s ease;
+}
+
+.showMoreButton:hover {
+    background-color: var(--secondary-color);
 }
 
 /* Cart styles */
@@ -50,7 +65,6 @@
 
 .addToCartButton {
     background-color: var(--primary-color);
-    color: white;
     border: none;
     padding: 4px 16px;
     border-radius: 4px;
@@ -82,29 +96,12 @@
     font-size: 1.4rem;
 }
 
-.bannerButton {
-    display: inline-block;
-    background-color: white;
-    color: var(--primary-color);
-    padding: 0.75rem 1.5rem;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.bannerButton:hover,
-.bannerButton:focus {
-    background-color: var(--secondary-color);
-    color: white;
-}
-
 .secondary:hover:not(:disabled) {
     background-color: #e0e0e0;
 }
 
 .danger {
     background-color: #ff4d4d;
-    color: white;
 }
 
 .danger:hover:not(:disabled) {

@@ -1,12 +1,10 @@
-import { useCart } from '../features/cart/cartUtils'
-import styles from './Cart.module.css'
-import Button from '../ui/Button'
-import { Link } from 'react-router'
-import { FaCcVisa, FaCcMastercard, FaCcPaypal, FaPix } from 'react-icons/fa6'
-import { FaBarcode } from "react-icons/fa";
-import { SiPicpay } from 'react-icons/si'
-import Sugestions from '../features/products/Sugestions'
 import { useState } from 'react'
+import { Link } from 'react-router'
+import { useCart } from '../features/cart/cartUtils'
+import { Button } from '../ui'
+import { Suggestions } from '../features/products'
+import { CartSummary } from '../features/cart/'
+import styles from './Cart.module.css'
 
 function Cart() {
   const { cart, removeFromCart, updateQuantity } = useCart()
@@ -38,41 +36,20 @@ function Cart() {
     }
   }
 
-  const payment = [
-    {
-      icon: <FaBarcode size={24} />,
-    },
-    {
-      icon: <FaPix size={24} />,
-    },
-    {
-      icon: <FaCcVisa size={24} />,
-    },
-    {
-      icon: <FaCcMastercard size={24} />,
-    },
-    {
-      icon: <FaCcPaypal size={24} />,
-    },
-    {
-      icon: <SiPicpay size={24} />,
-    }
-  ]
-
   return (
     <>
-      <div className={styles.cartContainer}>
-        <div className={styles.cart}>
+      <main className={styles.cartContainer}>
+        <article className={styles.cart}>
           {cart.length === 0 ? (
-            <div className={styles.emptyCart}>
+            <section className={styles.emptyCart}>
               <h1>O seu carrinho está vazio</h1>
               <p>Confira nossos produtos</p>
               <Link to="/">
-                <Button variant="primary">Ver produtos</Button>
+                <Button customClass="primary">Ver produtos</Button>
               </Link>
-            </div>
+            </section>
           ) : (
-            <div className={styles.cartContent}>
+            <section className={styles.cartContent}>
               <div className={styles.cartHeader}>
                 <h2>Carrinho ({cart.length})</h2>
                 <div className={styles.selectAll}>
@@ -109,66 +86,36 @@ function Cart() {
                             R$ {(item.price * item.quantity).toFixed(2)}
                           </span>
                           <div className={styles.quantityControl}>
-                            <Button onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))} variant="removeButton">-</Button>
+                            <Button onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))} customClass="removeButton">-</Button>
                             <span>{item.quantity}</span>
-                            <Button onClick={() => updateQuantity(item.id, item.quantity + 1)} variant="addButton">+</Button>
+                            <Button onClick={() => updateQuantity(item.id, item.quantity + 1)} customClass="addButton">+</Button>
                           </div>
                         </div>
                         <Button onClick={() => {
                           removeFromCart(item.id)
                           setSelectedItems(prev => prev.filter(id => id !== item.id))
-                        }} variant="secondary">Remover</Button>
+                        }} customClass="secondary">Remover</Button>
                       </div>
                     </div>
                   </li>
                 ))}
               </ul>
-            </div>
+            </section>
           )}
-        </div>
-
+        </article>
         {cart.length > 0 && (
-          <div className={styles.cartSummary}>
-            <h3>Resumo</h3>
-            <div className={styles.summaryItem}>
-              <span>Subtotal</span>
-              <span>R$ {total.toFixed(2)}</span>
-            </div>
-            <div className={styles.summaryItem}>
-              <span>Frete</span>
-              <span>R$ {selectedItems.length > 0 ? shipping.toFixed(2) : '0.00'}</span>
-            </div>
-            <div className={styles.summaryItem}>
-              <span>Desconto</span>
-              <span>R${selectedItems.length > 0 ? discount.toFixed(2) : '0.00'}</span>
-            </div>
-            <div className={`${styles.summaryItem} ${styles.total}`}>
-              <span>Total</span>
-              <span>R$ {(total + (selectedItems.length > 0 ? shipping : 0)).toFixed(2)}</span>
-            </div>
-            <Button
-              variant="primary"
-              className={styles.checkoutButton}
-              disabled={selectedItems.length === 0}
-            >
-              Continuar ({selectedItems.length})
-            </Button>
-            <div className={styles.securePayment}>
-              <h4>Métodos de pagamento</h4>
-              <p>Pagamentos 100% seguros</p>
-              <div className={styles.paymentMethods}>
-                {payment.map((method, index) => (
-                  <div key={index} className={styles.paymentIcon}>
-                    {method.icon}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          <CartSummary
+            total={total}
+            shipping={shipping}
+            discount={discount}
+            selectedItems={selectedItems}
+          />
         )}
-      </div>
+      </main>
 
-      <Sugestions title='Produtos Sugeridos' />
+      <section>
+        <Suggestions title='Produtos Sugeridos' />
+      </section>
     </>
   )
 }

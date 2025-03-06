@@ -1,82 +1,80 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router';
-import { FaArrowLeft } from 'react-icons/fa';
-import { FaEye, FaEyeSlash } from 'react-icons/fa6';
-import { FcGoogle } from "react-icons/fc";
-import Button from '../../ui/Button';
-import styles from './Login.module.css';
-import Input from '../../ui/form/Input';
-import Label from '../../ui/form/label';
+import { useState } from "react"
+import { Link, useNavigate } from "react-router"
+import { FaArrowLeft } from "react-icons/fa"
+import { FaEye, FaEyeSlash } from "react-icons/fa6"
+import { FcGoogle } from "react-icons/fc"
+import { Label, Input, Button } from "../../ui"
+import styles from "./Login.module.css"
 
 function Login() {
-    const navigate = useNavigate();
-    const [isLogin, setIsLogin] = useState(true);
-    const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate()
+    const [isLogin, setIsLogin] = useState(true)
+    const [showPassword, setShowPassword] = useState(false)
     const [formData, setFormData] = useState({
-        email: '',
-        password: '',
-        confirmPassword: '',
-        name: ''
-    });
-    const [errors, setErrors] = useState({});
+        email: "",
+        password: "",
+        confirmPassword: "",
+        name: "",
+    })
+    const [errors, setErrors] = useState({})
 
     const validateForm = () => {
-        const newErrors = {};
+        const newErrors = {}
 
         if (!formData.email) {
-            newErrors.email = 'Email é obrigatório';
+            newErrors.email = "Email é obrigatório"
         } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-            newErrors.email = 'Email inválido';
+            newErrors.email = "Email inválido"
         }
 
         if (!formData.password) {
-            newErrors.password = 'Senha é obrigatória';
+            newErrors.password = "Senha é obrigatória"
         } else if (formData.password.length < 6) {
-            newErrors.password = 'Senha deve ter no mínimo 6 caracteres';
+            newErrors.password = "Senha deve ter no mínimo 6 caracteres"
         }
 
         if (!isLogin) {
             if (!formData.name) {
-                newErrors.name = 'Nome é obrigatório';
+                newErrors.name = "Nome é obrigatório"
             }
 
             if (!formData.confirmPassword) {
-                newErrors.confirmPassword = 'Confirmação de senha é obrigatória';
+                newErrors.confirmPassword = "Confirmação de senha é obrigatória"
             } else if (formData.password !== formData.confirmPassword) {
-                newErrors.confirmPassword = 'Senhas não conferem';
+                newErrors.confirmPassword = "Senhas não conferem"
             }
         }
 
-        setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
-    };
+        setErrors(newErrors)
+        return Object.keys(newErrors).length === 0
+    }
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
         if (validateForm()) {
-            console.log('Form submitted:', formData);
-            navigate('/');
+            console.log("Form submitted:", formData)
+            navigate("/")
         }
-    };
+    }
 
     const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({
+        const { name, value } = e.target
+        setFormData((prev) => ({
             ...prev,
-            [name]: value
-        }));
+            [name]: value,
+        }))
         if (errors[name]) {
-            setErrors(prev => ({
+            setErrors((prev) => ({
                 ...prev,
-                [name]: ''
-            }));
+                [name]: "",
+            }))
         }
-    };
+    }
 
     const handleGoogleSignIn = () => {
-        console.log('Google Sign In clicked');
+        console.log("Google Sign In clicked")
         // Implement Google Sign In logic here
-    };
+    }
 
     return (
         <div className={styles.loginContainer}>
@@ -86,14 +84,11 @@ function Login() {
                 </Link>
                 <div className={styles.formContainer}>
                     <div className={styles.formHeader}>
-                        <button
-                            className={`${styles.tabButton} ${isLogin ? styles.active : ''}`}
-                            onClick={() => setIsLogin(true)}
-                        >
+                        <button className={`${styles.tabButton} ${isLogin ? styles.active : ""}`} onClick={() => setIsLogin(true)}>
                             Login
                         </button>
                         <button
-                            className={`${styles.tabButton} ${!isLogin ? styles.active : ''}`}
+                            className={`${styles.tabButton} ${!isLogin ? styles.active : ""}`}
                             onClick={() => setIsLogin(false)}
                         >
                             Cadastro
@@ -102,41 +97,32 @@ function Login() {
                     <form onSubmit={handleSubmit} className={styles.form}>
                         {!isLogin && (
                             <div className={styles.formGroup}>
-                                <Label
-                                    htmlFor="name"
-                                    text="Nome"
-                                />
+                                <Label htmlFor="name" text="Nome" />
                                 <Input
                                     type="text"
                                     id="name"
                                     name="name"
                                     value={formData.name}
                                     handleInputChange={handleInputChange}
-                                    customClass={errors.name ? 'errorInput' : ''}
+                                    customClass={errors.name ? "errorInput" : ""}
                                 />
                                 {errors.name && <span className={styles.errorMessage}>{errors.name}</span>}
                             </div>
                         )}
                         <div className={styles.formGroup}>
-                            <Label
-                                htmlFor="email"
-                                text="Email"
-                            />
+                            <Label htmlFor="email" text="Email" />
                             <Input
                                 type="email"
                                 id="email"
                                 name="email"
                                 value={formData.email}
                                 handleInputChange={handleInputChange}
-                                customClass={errors.email ? 'errorInput' : ''}
+                                customClass={errors.email ? "errorInput" : ""}
                             />
                             {errors.email && <span className={styles.errorMessage}>{errors.email}</span>}
                         </div>
                         <div className={styles.formGroup}>
-                            <Label
-                                htmlFor="password"
-                                text="Senha"
-                            />
+                            <Label htmlFor="password" text="Senha" />
                             <div className={styles.passwordInput}>
                                 <Input
                                     type={showPassword ? "text" : "password"}
@@ -144,7 +130,7 @@ function Login() {
                                     name="password"
                                     value={formData.password}
                                     handleInputChange={handleInputChange}
-                                    customClass={errors.password ? 'errorInput' : ''}
+                                    customClass={errors.password ? "errorInput" : ""}
                                 />
                                 <button
                                     type="button"
@@ -158,10 +144,7 @@ function Login() {
                         </div>
                         {!isLogin && (
                             <div className={styles.formGroup}>
-                                <Label
-                                    htmlFor="confirmPassword"
-                                    text="Confirmar senha"
-                                />
+                                <Label htmlFor="confirmPassword" text="Confirmar senha" />
                                 <div className={styles.passwordInput}>
                                     <Input
                                         type={showPassword ? "text" : "password"}
@@ -169,12 +152,10 @@ function Login() {
                                         name="confirmPassword"
                                         value={formData.confirmPassword}
                                         handleInputChange={handleInputChange}
-                                        customClass={errors.password ? 'errorInput' : ''}
+                                        customClass={errors.password ? "errorInput" : ""}
                                     />
                                 </div>
-                                {errors.confirmPassword && (
-                                    <span className={styles.errorMessage}>{errors.confirmPassword}</span>
-                                )}
+                                {errors.confirmPassword && <span className={styles.errorMessage}>{errors.confirmPassword}</span>}
                             </div>
                         )}
                         {isLogin && (
@@ -182,18 +163,14 @@ function Login() {
                                 Esqueceu sua senha?
                             </Link>
                         )}
-                        <Button type="submit" variant="primary" className={styles.submitButton}>
-                            {isLogin ? 'Entrar' : 'Cadastrar'}
+                        <Button type="submit" customClass="primary" className={styles.submitButton}>
+                            {isLogin ? "Entrar" : "Cadastrar"}
                         </Button>
                     </form>
                     <div className={styles.divider}>
                         <span>ou</span>
                     </div>
-                    <button
-                        type="button"
-                        className={styles.googleButton}
-                        onClick={handleGoogleSignIn}
-                    >
+                    <button type="button" className={styles.googleButton} onClick={handleGoogleSignIn}>
                         <FcGoogle size={20} /> Entrar com Google
                     </button>
                     <Link to="/" className={styles.backToHome}>
@@ -202,7 +179,7 @@ function Login() {
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
 export default Login

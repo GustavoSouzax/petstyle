@@ -1,0 +1,30 @@
+.ratingContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stars {
+    display: flex;
+    color: #ffc107;
+    font-size: 1.2rem;
+}
+
+.star {
+    margin-right: 2px;
+}
+
+.ratingCount {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .stars {
+        font-size: 1rem;
+    }
+
+    .ratingCount {
+        font-size: 0.8rem;
+    }
+}

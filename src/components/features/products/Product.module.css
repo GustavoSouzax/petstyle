@@ -5,10 +5,13 @@
     flex-direction: column;
     background-color: #fff;
     border: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .productCard:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
 }
 
 .productImage {
@@ -27,7 +30,7 @@
 }
 
 .productInfo {
-    padding:  0 16px;
+    padding: 0 16px;
 }
 
 .productTitle {

@@ -1,11 +1,11 @@
-import styles from './Offers.module.css'
 import ProductList from '../features/products/ProductList'
+import styles from './Offers.module.css'
 
 function Offers() {
     return (
-        <div className={styles.offers}>
+        <main className={styles.offers}>
             <ProductList />
-        </div>
+        </main>
     )
 }
 
